@@ -1,0 +1,171 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* All colors derived from the logo blue hue (199°) */
+  --logo-blue: #009fda;
+  --bg:        #070f14;   /* near-black navy */
+  --surface:   #0d1e28;   /* dark blue-tinted card surface */
+  --border:    #1a3445;   /* muted blue border */
+  --text:      #ddf0fa;   /* cool blue-white */
+  --muted:     #5a8fa8;   /* desaturated mid-blue */
+  --accent:    #009fda;   /* logo blue, used for highlights */
+  --gap: 1.5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--logo-blue);
+  text-align: center;
+  border-bottom: none;
+}
+
+.site-logo {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin: 0 auto;
+}
+
+header p {
+  padding: 1rem var(--gap) 1.75rem;
+  background: linear-gradient(to bottom, var(--logo-blue), var(--bg));
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: calc(var(--gap) * 2) var(--gap);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 30, 50, 0.7);
+}
+
+.card-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #0a1820;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.04);
+}
+
+.card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.card-meta {
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem var(--gap);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Lightbox — CSS-only, no JS */
+.lightbox-target {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 20, 0.94);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox-target:target {
+  display: flex;
+}
+
+.lightbox-target img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 6px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1.4rem;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
