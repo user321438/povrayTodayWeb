@@ -1,0 +1,805 @@
+commit 7ce26cd77384ed4ac2df1cecb9340229f4aabd20
+Author: PovRay Today <povraytoday@gmail.com>
+Date:   Fri May 29 15:59:05 2026 -0500
+
+    changes
+
+diff --git a/index.html b/index.html
+index 4f4e47d..bbf4b09 100644
+--- a/index.html
++++ b/index.html
+@@ -22,9 +22,12 @@
+         <img src="images/Spheres_150.png" alt="Ray-traced spheres" loading="lazy">
+       </a>
+       <div class="card-body">
+-        <div class="card-title">Spheres</div>
++        <div class="card-title">Spheres and Colored Lights</div>
+         <div class="card-desc">A classic POV-Ray scene featuring ray-traced spheres with reflective and refractive surface materials.</div>
+-        <div class="card-meta">Spheres_150.png</div>
++        <div class="card-tags">
++          <span class="tag">UberPov</span>
++          <span class="tag">PovSharp</span>
++        </div>
+       </div>
+     </div>
+ 
+diff --git a/style.css b/style.css
+index af2a08f..fa9a597 100644
+--- a/style.css
++++ b/style.css
+@@ -111,10 +111,22 @@ main {
+   flex: 1;
+ }
+ 
+-.card-meta {
+-  font-size: 0.75rem;
++.card-tags {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.4rem;
++  margin-top: 0.6rem;
++}
++
++.tag {
++  font-size: 0.72rem;
++  font-weight: 600;
++  letter-spacing: 0.03em;
++  padding: 0.2rem 0.6rem;
++  border-radius: 999px;
++  background: rgba(0, 159, 218, 0.1);
+   color: var(--accent);
+-  margin-top: 0.5rem;
++  border: 1px solid rgba(0, 159, 218, 0.3);
+ }
+ 
+ footer {
+
+commit 27fceec391025e0bf4ad3a0eca04d7b5b013e8ca
+Author: PovRay Today <povraytoday@gmail.com>
+Date:   Fri May 29 15:35:32 2026 -0500
+
+    changes
+
+diff --git a/favicon.ico b/favicon.ico
+new file mode 100644
+index 0000000..7af8734
+Binary files /dev/null and b/favicon.ico differ
+diff --git a/images/Spheres_150.png b/images/Spheres_150.png
+new file mode 100644
+index 0000000..35c77be
+Binary files /dev/null and b/images/Spheres_150.png differ
+diff --git a/images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png b/images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png
+deleted file mode 100644
+index cb30937..0000000
+Binary files a/images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png
+deleted file mode 100644
+index fdda980..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png
+deleted file mode 100644
+index 874d870..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png
+deleted file mode 100644
+index e2e5648..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png
+deleted file mode 100644
+index 3807154..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png
+deleted file mode 100644
+index 6fd4d9a..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png
+deleted file mode 100644
+index 751efdf..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png
+deleted file mode 100644
+index 8486d5a..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png
+deleted file mode 100644
+index da1c510..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png
+deleted file mode 100644
+index 214797f..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png and /dev/null differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png
+deleted file mode 100644
+index 981bf21..0000000
+Binary files a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png and /dev/null differ
+diff --git a/images/pie_chart_template_presentation_ad57b235.png b/images/pie_chart_template_presentation_ad57b235.png
+deleted file mode 100644
+index 4204d61..0000000
+Binary files a/images/pie_chart_template_presentation_ad57b235.png and /dev/null differ
+diff --git a/index.html b/index.html
+index 51dfcbe..4f4e47d 100644
+--- a/index.html
++++ b/index.html
+@@ -5,13 +5,13 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PovRay Today</title>
+   <meta name="description" content="A gallery of POV-Ray ray-traced renders.">
++  <link rel="icon" href="favicon.ico" sizes="any">
+   <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+ 
+ <header>
+   <a href="#"><img src="logo.png" alt="PovRay Today" class="site-logo"></a>
+-  <p>A gallery of ray-traced renders</p>
+ </header>
+ 
+ <main>
+@@ -19,133 +19,12 @@
+ 
+     <div class="card">
+       <a class="card-image" href="#lb1">
+-        <img src="images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png" alt="Exotic bar chart in neon magenta" loading="lazy">
++        <img src="images/Spheres_150.png" alt="Ray-traced spheres" loading="lazy">
+       </a>
+       <div class="card-body">
+-        <div class="card-title">Exotic Bar Chart — Neon Magenta</div>
+-        <div class="card-desc">A stylised bar chart rendered with a vivid neon magenta material finish and dramatic studio lighting.</div>
+-        <div class="card-meta">2026-05-25</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb2">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png" alt="Angled bar graph with anodized blue finish" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Anodized Blue</div>
+-        <div class="card-desc">Angled bars with a rise–drop–flat–rise–gentle dataset profile, finished in a cool anodized blue metal.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb3">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png" alt="Angled bar graph with anodized red finish" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Anodized Red</div>
+-        <div class="card-desc">The same dataset and geometry, re-rendered with an anodized red metal surface treatment.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb4">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png" alt="Angled bar graph with autumn fire texture" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Autumn Fire</div>
+-        <div class="card-desc">Warm amber and orange pigment layers evoke autumn embers across the angled bar surfaces.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb5">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png" alt="Angled bar graph with cobalt depths material" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Cobalt Depths</div>
+-        <div class="card-desc">A deep cobalt blue material gives the bars a cool, almost underwater presence with strong specular highlights.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb6">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png" alt="Angled bar graph with cobalt depths material, alternate render" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Cobalt Depths (alt)</div>
+-        <div class="card-desc">An alternate cobalt depths render exploring a different camera angle or lighting configuration.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb7">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png" alt="Angled bar graph with deep burgundy finish" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Deep Burgundy</div>
+-        <div class="card-desc">Rich deep burgundy pigment with subtle warm reflections, reminiscent of polished dark wood or lacquered wine-red paint.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb8">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png" alt="Angled bar graph with desert sand texture" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Desert Sand</div>
+-        <div class="card-desc">Warm sandy tones simulate sun-bleached stone or weathered terracotta across the bar surfaces.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb9">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png" alt="Angled bar graph with galvanized steel finish" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Galvanized Steel</div>
+-        <div class="card-desc">Industrial galvanized steel with realistic surface grain and diffuse-to-specular reflectance modelling.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb10">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png" alt="Angled bar graph with alexandrite gem material in green phase" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Alexandrite (Green)</div>
+-        <div class="card-desc">Alexandrite gemstone material in its daylight green phase — the same finish appears deep red under incandescent light.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb11">
+-        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png" alt="Angled bar graph with alexandrite gem material in red phase" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Bar Graph — Alexandrite (Red)</div>
+-        <div class="card-desc">The same alexandrite material under warm incandescent lighting, shifted to its characteristic deep red-violet hue.</div>
+-        <div class="card-meta">2026-05-23</div>
+-      </div>
+-    </div>
+-
+-    <div class="card">
+-      <a class="card-image" href="#lb12">
+-        <img src="images/pie_chart_template_presentation_ad57b235.png" alt="Presentation pie chart" loading="lazy">
+-      </a>
+-      <div class="card-body">
+-        <div class="card-title">Pie Chart — Presentation Template</div>
+-        <div class="card-desc">A presentation-ready pie chart with clean segment materials and balanced studio lighting, ready for data substitution.</div>
+-        <div class="card-meta">template</div>
++        <div class="card-title">Spheres</div>
++        <div class="card-desc">A classic POV-Ray scene featuring ray-traced spheres with reflective and refractive surface materials.</div>
++        <div class="card-meta">Spheres_150.png</div>
+       </div>
+     </div>
+ 
+@@ -155,55 +34,11 @@
+ <!-- Lightbox overlays -->
+ <div id="lb1" class="lightbox-target" onclick="location.hash='#'">
+   <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png" alt="Exotic bar chart in neon magenta">
+-</div>
+-<div id="lb2" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png" alt="Angled bar graph with anodized blue finish">
+-</div>
+-<div id="lb3" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png" alt="Angled bar graph with anodized red finish">
+-</div>
+-<div id="lb4" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png" alt="Angled bar graph with autumn fire texture">
+-</div>
+-<div id="lb5" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png" alt="Angled bar graph with cobalt depths material">
+-</div>
+-<div id="lb6" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png" alt="Angled bar graph with cobalt depths material, alternate render">
+-</div>
+-<div id="lb7" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png" alt="Angled bar graph with deep burgundy finish">
+-</div>
+-<div id="lb8" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png" alt="Angled bar graph with desert sand texture">
+-</div>
+-<div id="lb9" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png" alt="Angled bar graph with galvanized steel finish">
+-</div>
+-<div id="lb10" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png" alt="Angled bar graph with alexandrite gem material in green phase">
+-</div>
+-<div id="lb11" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png" alt="Angled bar graph with alexandrite gem material in red phase">
+-</div>
+-<div id="lb12" class="lightbox-target" onclick="location.hash='#'">
+-  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+-  <img src="images/pie_chart_template_presentation_ad57b235.png" alt="Presentation pie chart">
++  <img src="images/Spheres_150.png" alt="Ray-traced spheres">
+ </div>
+ 
+ <footer>
+-  <p>Built with POV-Ray &amp; plain HTML &mdash; no server required</p>
++  <p>&copy; 2026 PovRay Today. All rights reserved.</p>
+ </footer>
+ 
+ </body>
+diff --git a/style.css b/style.css
+index 21157fe..af2a08f 100644
+--- a/style.css
++++ b/style.css
+@@ -38,11 +38,11 @@ header {
+   margin: 0 auto;
+ }
+ 
+-header p {
+-  padding: 1rem var(--gap) 1.75rem;
++header::after {
++  content: '';
++  display: block;
++  height: 2rem;
+   background: linear-gradient(to bottom, var(--logo-blue), var(--bg));
+-  color: rgba(255, 255, 255, 0.75);
+-  font-size: 1rem;
+ }
+ 
+ main {
+
+commit c1b2fa4ec2a7a92dca260fa503fe59434c8cbc85
+Author: PovRay Today <povraytoday@gmail.com>
+Date:   Thu May 28 18:47:09 2026 -0500
+
+    site
+
+diff --git a/images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png b/images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png
+new file mode 100644
+index 0000000..cb30937
+Binary files /dev/null and b/images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png
+new file mode 100644
+index 0000000..fdda980
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png
+new file mode 100644
+index 0000000..874d870
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png
+new file mode 100644
+index 0000000..e2e5648
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png
+new file mode 100644
+index 0000000..3807154
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png
+new file mode 100644
+index 0000000..6fd4d9a
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png
+new file mode 100644
+index 0000000..751efdf
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png
+new file mode 100644
+index 0000000..8486d5a
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png
+new file mode 100644
+index 0000000..da1c510
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png
+new file mode 100644
+index 0000000..214797f
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png differ
+diff --git a/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png
+new file mode 100644
+index 0000000..981bf21
+Binary files /dev/null and b/images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png differ
+diff --git a/images/pie_chart_template_presentation_ad57b235.png b/images/pie_chart_template_presentation_ad57b235.png
+new file mode 100644
+index 0000000..4204d61
+Binary files /dev/null and b/images/pie_chart_template_presentation_ad57b235.png differ
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..51dfcbe
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,210 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>PovRay Today</title>
++  <meta name="description" content="A gallery of POV-Ray ray-traced renders.">
++  <link rel="stylesheet" href="style.css">
++</head>
++<body>
++
++<header>
++  <a href="#"><img src="logo.png" alt="PovRay Today" class="site-logo"></a>
++  <p>A gallery of ray-traced renders</p>
++</header>
++
++<main>
++  <div class="gallery">
++
++    <div class="card">
++      <a class="card-image" href="#lb1">
++        <img src="images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png" alt="Exotic bar chart in neon magenta" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Exotic Bar Chart — Neon Magenta</div>
++        <div class="card-desc">A stylised bar chart rendered with a vivid neon magenta material finish and dramatic studio lighting.</div>
++        <div class="card-meta">2026-05-25</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb2">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png" alt="Angled bar graph with anodized blue finish" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Anodized Blue</div>
++        <div class="card-desc">Angled bars with a rise–drop–flat–rise–gentle dataset profile, finished in a cool anodized blue metal.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb3">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png" alt="Angled bar graph with anodized red finish" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Anodized Red</div>
++        <div class="card-desc">The same dataset and geometry, re-rendered with an anodized red metal surface treatment.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb4">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png" alt="Angled bar graph with autumn fire texture" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Autumn Fire</div>
++        <div class="card-desc">Warm amber and orange pigment layers evoke autumn embers across the angled bar surfaces.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb5">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png" alt="Angled bar graph with cobalt depths material" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Cobalt Depths</div>
++        <div class="card-desc">A deep cobalt blue material gives the bars a cool, almost underwater presence with strong specular highlights.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb6">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png" alt="Angled bar graph with cobalt depths material, alternate render" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Cobalt Depths (alt)</div>
++        <div class="card-desc">An alternate cobalt depths render exploring a different camera angle or lighting configuration.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb7">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png" alt="Angled bar graph with deep burgundy finish" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Deep Burgundy</div>
++        <div class="card-desc">Rich deep burgundy pigment with subtle warm reflections, reminiscent of polished dark wood or lacquered wine-red paint.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb8">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png" alt="Angled bar graph with desert sand texture" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Desert Sand</div>
++        <div class="card-desc">Warm sandy tones simulate sun-bleached stone or weathered terracotta across the bar surfaces.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb9">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png" alt="Angled bar graph with galvanized steel finish" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Galvanized Steel</div>
++        <div class="card-desc">Industrial galvanized steel with realistic surface grain and diffuse-to-specular reflectance modelling.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb10">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png" alt="Angled bar graph with alexandrite gem material in green phase" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Alexandrite (Green)</div>
++        <div class="card-desc">Alexandrite gemstone material in its daylight green phase — the same finish appears deep red under incandescent light.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb11">
++        <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png" alt="Angled bar graph with alexandrite gem material in red phase" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Bar Graph — Alexandrite (Red)</div>
++        <div class="card-desc">The same alexandrite material under warm incandescent lighting, shifted to its characteristic deep red-violet hue.</div>
++        <div class="card-meta">2026-05-23</div>
++      </div>
++    </div>
++
++    <div class="card">
++      <a class="card-image" href="#lb12">
++        <img src="images/pie_chart_template_presentation_ad57b235.png" alt="Presentation pie chart" loading="lazy">
++      </a>
++      <div class="card-body">
++        <div class="card-title">Pie Chart — Presentation Template</div>
++        <div class="card-desc">A presentation-ready pie chart with clean segment materials and balanced studio lighting, ready for data substitution.</div>
++        <div class="card-meta">template</div>
++      </div>
++    </div>
++
++  </div>
++</main>
++
++<!-- Lightbox overlays -->
++<div id="lb1" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_exotic_57_neon_magenta_2026-05-25_99bef15c.png" alt="Exotic bar chart in neon magenta">
++</div>
++<div id="lb2" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_blue_bd11e4f5.png" alt="Angled bar graph with anodized blue finish">
++</div>
++<div id="lb3" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_anodized_red_ee9831d0.png" alt="Angled bar graph with anodized red finish">
++</div>
++<div id="lb4" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_autumn_fire_d3860b72.png" alt="Angled bar graph with autumn fire texture">
++</div>
++<div id="lb5" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_a8cea6eb.png" alt="Angled bar graph with cobalt depths material">
++</div>
++<div id="lb6" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_cobalt_depths_afeb10e7.png" alt="Angled bar graph with cobalt depths material, alternate render">
++</div>
++<div id="lb7" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_deep_burgundy_6cc49b0b.png" alt="Angled bar graph with deep burgundy finish">
++</div>
++<div id="lb8" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_desert_sand_516d5dd4.png" alt="Angled bar graph with desert sand texture">
++</div>
++<div id="lb9" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_galvanized_steel_9c877329.png" alt="Angled bar graph with galvanized steel finish">
++</div>
++<div id="lb10" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_green_6f9f42e0.png" alt="Angled bar graph with alexandrite gem material in green phase">
++</div>
++<div id="lb11" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/bar_graph_angle_bars_data_rise_drop_flat_rise_gentle_2026-05-23T07-55-15_gem_alexandrite_red_df559e4e.png" alt="Angled bar graph with alexandrite gem material in red phase">
++</div>
++<div id="lb12" class="lightbox-target" onclick="location.hash='#'">
++  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
++  <img src="images/pie_chart_template_presentation_ad57b235.png" alt="Presentation pie chart">
++</div>
++
++<footer>
++  <p>Built with POV-Ray &amp; plain HTML &mdash; no server required</p>
++</footer>
++
++</body>
++</html>
+diff --git a/logo.png b/logo.png
+new file mode 100644
+index 0000000..82a445e
+Binary files /dev/null and b/logo.png differ
+diff --git a/style.css b/style.css
+new file mode 100644
+index 0000000..21157fe
+--- /dev/null
++++ b/style.css
+@@ -0,0 +1,171 @@
++*, *::before, *::after {
++  box-sizing: border-box;
++  margin: 0;
++  padding: 0;
++}
++
++:root {
++  /* All colors derived from the logo blue hue (199°) */
++  --logo-blue: #009fda;
++  --bg:        #070f14;   /* near-black navy */
++  --surface:   #0d1e28;   /* dark blue-tinted card surface */
++  --border:    #1a3445;   /* muted blue border */
++  --text:      #ddf0fa;   /* cool blue-white */
++  --muted:     #5a8fa8;   /* desaturated mid-blue */
++  --accent:    #009fda;   /* logo blue, used for highlights */
++  --gap: 1.5rem;
++}
++
++body {
++  background: var(--bg);
++  color: var(--text);
++  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
++  line-height: 1.6;
++  min-height: 100vh;
++}
++
++header {
++  background: var(--logo-blue);
++  text-align: center;
++  border-bottom: none;
++}
++
++.site-logo {
++  display: block;
++  width: 100%;
++  max-width: 640px;
++  height: auto;
++  margin: 0 auto;
++}
++
++header p {
++  padding: 1rem var(--gap) 1.75rem;
++  background: linear-gradient(to bottom, var(--logo-blue), var(--bg));
++  color: rgba(255, 255, 255, 0.75);
++  font-size: 1rem;
++}
++
++main {
++  max-width: 1280px;
++  margin: 0 auto;
++  padding: calc(var(--gap) * 2) var(--gap);
++}
++
++.gallery {
++  display: grid;
++  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
++  gap: var(--gap);
++}
++
++.card {
++  background: var(--surface);
++  border: 1px solid var(--border);
++  border-radius: 10px;
++  overflow: hidden;
++  display: flex;
++  flex-direction: column;
++  transition: transform 0.2s ease, box-shadow 0.2s ease;
++}
++
++.card:hover {
++  transform: translateY(-4px);
++  box-shadow: 0 12px 32px rgba(0, 30, 50, 0.7);
++}
++
++.card-image {
++  aspect-ratio: 4 / 3;
++  overflow: hidden;
++  background: #0a1820;
++}
++
++.card-image img {
++  width: 100%;
++  height: 100%;
++  object-fit: cover;
++  display: block;
++  transition: transform 0.3s ease;
++}
++
++.card:hover .card-image img {
++  transform: scale(1.04);
++}
++
++.card-body {
++  padding: 1rem 1.1rem 1.2rem;
++  flex: 1;
++  display: flex;
++  flex-direction: column;
++  gap: 0.35rem;
++}
++
++.card-title {
++  font-size: 0.95rem;
++  font-weight: 600;
++  color: var(--text);
++}
++
++.card-desc {
++  font-size: 0.82rem;
++  color: var(--muted);
++  line-height: 1.5;
++  flex: 1;
++}
++
++.card-meta {
++  font-size: 0.75rem;
++  color: var(--accent);
++  margin-top: 0.5rem;
++}
++
++footer {
++  text-align: center;
++  padding: 2rem var(--gap);
++  border-top: 1px solid var(--border);
++  color: var(--muted);
++  font-size: 0.8rem;
++}
++
++/* Lightbox — CSS-only, no JS */
++.lightbox-target {
++  display: none;
++  position: fixed;
++  inset: 0;
++  background: rgba(0, 10, 20, 0.94);
++  z-index: 100;
++  align-items: center;
++  justify-content: center;
++  cursor: zoom-out;
++}
++
++.lightbox-target:target {
++  display: flex;
++}
++
++.lightbox-target img {
++  max-width: 92vw;
++  max-height: 88vh;
++  border-radius: 6px;
++  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
++  cursor: default;
++}
++
++.lightbox-close {
++  position: fixed;
++  top: 1rem;
++  right: 1.4rem;
++  font-size: 2rem;
++  color: #fff;
++  text-decoration: none;
++  line-height: 1;
++  opacity: 0.7;
++}
++
++.lightbox-close:hover {
++  opacity: 1;
++}
++
++@media (max-width: 480px) {
++  .gallery {
++    grid-template-columns: 1fr;
++  }
++}
