@@ -111,10 +111,22 @@ main {
   flex: 1;
 }
 
-.card-meta {
-  font-size: 0.75rem;
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(0, 159, 218, 0.1);
   color: var(--accent);
-  margin-top: 0.5rem;
+  border: 1px solid rgba(0, 159, 218, 0.3);
 }
 
 footer {
