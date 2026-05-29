@@ -31,10 +31,27 @@
       </div>
     </div>
 
+    <div class="card">
+      <a class="card-image" href="#lb2">
+        <img src="images/SpheresCone_001.png" alt="Ray-traced spheres and cone" loading="lazy">
+      </a>
+      <div class="card-body">
+        <div class="card-title">Spheres and Cone</div>
+        <div class="card-desc">A POV-Ray scene combining spheres and a cone primitive, exploring surface materials and light interaction between geometric forms.</div>
+        <div class="card-tags">
+          <span class="tag">UberPov</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </main>
 
 <!-- Lightbox overlays -->
+<div id="lb2" class="lightbox-target" onclick="location.hash='#'">
+  <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
+  <img src="images/SpheresCone_001.png" alt="Ray-traced spheres and cone">
+</div>
 <div id="lb1" class="lightbox-target" onclick="location.hash='#'">
   <a href="#" class="lightbox-close" onclick="event.stopPropagation()">&#x2715;</a>
   <img src="images/Spheres_150.png" alt="Ray-traced spheres">
@@ -44,5 +61,70 @@
   <p>&copy; 2026 PovRay Today. All rights reserved.</p>
 </footer>
 
+
+<script>
+(function () {
+  var scale = 1, ox = 0, oy = 0, drag = false, sx, sy;
+
+  function activeImg() {
+    var h = location.hash;
+    if (!h || h === '#') return null;
+    var lb = document.querySelector(h);
+    return lb ? lb.querySelector('img') : null;
+  }
+
+  function apply(el) {
+    el.style.transform = 'translate(' + ox + 'px,' + oy + 'px) scale(' + scale + ')';
+    el.style.cursor = scale > 1 ? (drag ? 'grabbing' : 'grab') : 'default';
+  }
+
+  function reset() {
+    scale = 1; ox = 0; oy = 0;
+    document.querySelectorAll('.lightbox-target img').forEach(function (el) {
+      el.style.transform = '';
+      el.style.cursor = '';
+    });
+  }
+
+  // Scroll to zoom
+  document.addEventListener('wheel', function (e) {
+    var el = activeImg();
+    if (!el) return;
+    e.preventDefault();
+    scale = Math.min(5, Math.max(1, scale + (e.deltaY < 0 ? 0.2 : -0.2)));
+    if (scale === 1) { ox = 0; oy = 0; }
+    apply(el);
+  }, { passive: false });
+
+  // Drag to pan
+  document.addEventListener('mousedown', function (e) {
+    var el = activeImg();
+    if (!el || scale === 1) return;
+    drag = true; sx = e.clientX - ox; sy = e.clientY - oy;
+    apply(el);
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (!drag) return;
+    var el = activeImg();
+    if (!el) return;
+    ox = e.clientX - sx; oy = e.clientY - sy;
+    apply(el);
+  });
+  document.addEventListener('mouseup', function () {
+    drag = false;
+    var el = activeImg(); if (el) apply(el);
+  });
+
+  // Double-click to reset zoom
+  document.addEventListener('dblclick', function () {
+    var el = activeImg(); if (el && scale > 1) reset();
+  });
+
+  // Reset when lightbox closes
+  window.addEventListener('hashchange', function () {
+    if (!location.hash || location.hash === '#') reset();
+  });
+}());
+</script>
 </body>
 </html>

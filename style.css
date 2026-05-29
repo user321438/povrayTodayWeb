@@ -159,6 +159,9 @@ footer {
   border-radius: 6px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
   cursor: default;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.05s ease;
 }
 
 .lightbox-close {
@@ -175,6 +178,7 @@ footer {
 .lightbox-close:hover {
   opacity: 1;
 }
+
 
 @media (max-width: 480px) {
   .gallery {
