@@ -38,11 +38,11 @@ header {
   margin: 0 auto;
 }
 
-header p {
-  padding: 1rem var(--gap) 1.75rem;
+header::after {
+  content: '';
+  display: block;
+  height: 2rem;
   background: linear-gradient(to bottom, var(--logo-blue), var(--bg));
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1rem;
 }
 
 main {
