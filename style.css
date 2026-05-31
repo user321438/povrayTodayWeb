@@ -157,6 +157,18 @@ footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* Lightbox — CSS-only, no JS */
